@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent" android:layout_height="fill_parent"
+	android:orientation="vertical" android:gravity="center_horizontal"
+	android:padding="10dip">
+	<TextView android:text="@string/holiday_app_desc" android:id="@+id/TextView01"
+		android:layout_width="wrap_content" android:layout_height="wrap_content"
+		android:layout_weight="1"></TextView>
+	<Button android:text="@string/visit_website" android:id="@+id/buttonWebsite"
+		android:layout_width="wrap_content" android:layout_height="wrap_content"
+		android:layout_gravity="bottom|center_horizontal"></Button>
+</LinearLayout>

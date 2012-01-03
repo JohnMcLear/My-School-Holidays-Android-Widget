@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/svn/beanie_holidayapp/!svn/ver/30/HolidayApp/src/com/primaryt/mshwidget/utils
+END
+MyHandler.java
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/beanie_holidayapp/!svn/ver/30/HolidayApp/src/com/primaryt/mshwidget/utils/MyHandler.java
+END
+IOUtils.java
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/svn/beanie_holidayapp/!svn/ver/30/HolidayApp/src/com/primaryt/mshwidget/utils/IOUtils.java
+END
+Preferences.java
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/beanie_holidayapp/!svn/ver/30/HolidayApp/src/com/primaryt/mshwidget/utils/Preferences.java
+END
+EventInfoParser.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/beanie_holidayapp/!svn/ver/30/HolidayApp/src/com/primaryt/mshwidget/utils/EventInfoParser.java
+END
+BasicJSONParser.java
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/beanie_holidayapp/!svn/ver/30/HolidayApp/src/com/primaryt/mshwidget/utils/BasicJSONParser.java
+END
+Config.java
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/beanie_holidayapp/!svn/ver/30/HolidayApp/src/com/primaryt/mshwidget/utils/Config.java
+END
+SchoolInfoParser.java
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/beanie_holidayapp/!svn/ver/30/HolidayApp/src/com/primaryt/mshwidget/utils/SchoolInfoParser.java
+END

@@ -1,0 +1,9 @@
+### Version 1.0
+
+Initial Release
+
+### Version 1.1
+
+Bug fixes
+1. During the holiday, the message should show how many days until holiday ends
+2. Widget doesn't refresh until re-boot
