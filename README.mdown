@@ -7,3 +7,4 @@ Initial Release
 Bug fixes
 1. During the holiday, the message should show how many days until holiday ends
 2. Widget doesn't refresh until re-boot
+3. Unwanted "No results found message" removed

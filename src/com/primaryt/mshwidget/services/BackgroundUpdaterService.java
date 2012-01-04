@@ -39,27 +39,6 @@ public class BackgroundUpdaterService extends Service {
     }
 
     private void updateTextInfo(ArrayList<Event> eventList) {
-        if (Config.LOGGING) {
-            String logfilePath = Environment.getExternalStorageDirectory().getAbsolutePath()
-                    + File.separator + "msh";
-            File logDir = new File(logfilePath);
-            if (!logDir.exists()) {
-                logDir.mkdirs();
-            }
-            logfilePath = logfilePath + File.separator + "log.txt";
-            FileWriter fw;
-            try {
-                fw = new FileWriter(new File(logfilePath));
-                SimpleDateFormat format = new SimpleDateFormat("hh:mm:ss");
-                Date date = new Date(Calendar.getInstance().getTimeInMillis());
-                fw.append("Time: " + format.format(date) + "\n");
-                fw.flush();
-                fw.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-
-        }
         Event event = null;
         for (int i = 0; i < eventList.size(); i++) {
             event = eventList.get(i);
@@ -203,6 +182,29 @@ public class BackgroundUpdaterService extends Service {
     @Override
     public void onCreate() {
         super.onCreate();
+        
+        if (Config.LOGGING) {
+            String logfilePath = Environment.getExternalStorageDirectory().getAbsolutePath()
+                    + File.separator + "msh";
+            File logDir = new File(logfilePath);
+            if (!logDir.exists()) {
+                logDir.mkdirs();
+            }
+            logfilePath = logfilePath + File.separator + "log.txt";
+            FileWriter fw;
+            try {
+                fw = new FileWriter(new File(logfilePath));
+                SimpleDateFormat format = new SimpleDateFormat("hh:mm:ss");
+                Date date = new Date(Calendar.getInstance().getTimeInMillis());
+                fw.append("Time: " + format.format(date) + "\n");
+                fw.flush();
+                fw.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+
+        }
+        
         Preferences preference = new Preferences(this);
         Long schoolID = preference.getSelectedSchoolID();
         Thread thread = new EventFetchThread(this, handler, "" + schoolID);
