@@ -21,9 +21,10 @@ public class SchoolInfoParser {
     }
 
     public ArrayList<School> parse() throws JSONException {
+    	jsonString = jsonString.trim();
         if (jsonString.indexOf("(") < 2) {
             int strLen = jsonString.length();
-            jsonString = jsonString.substring(1, strLen - 2);
+            jsonString = jsonString.substring(1, strLen - 1);
         }
         JSONArray nameArray = new JSONArray(jsonString);
         for (int i = 0; i < nameArray.length(); i++) {
