@@ -63,7 +63,7 @@ public class BackgroundUpdaterService extends Service {
 						if (event.getCurrentEvent().equals("Holiday")) {
 							remoteViews.setImageViewResource(
 									R.id.imageViewTextHoliday,
-									R.drawable.holiday_end_text);
+									R.drawable.term_begins_on_text);
 						} else if (event.getCurrentEvent().equals("Term")) {
 							remoteViews.setImageViewResource(
 									R.id.imageViewTextHoliday,
