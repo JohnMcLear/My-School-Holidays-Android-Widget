@@ -21,10 +21,11 @@ public class BasicThread extends Thread {
         this.context = context;
     }
 
-    protected void catchAndSendException(Throwable e) {
+    protected void catchAndSendException(Throwable e, String query) {
         Message message = new Message();
         Bundle bundle = new Bundle();
         bundle.putSerializable("exception", e.getLocalizedMessage());
+        bundle.putString("query", query);
         message.setData(bundle);
         handler.sendMessage(message);
     }

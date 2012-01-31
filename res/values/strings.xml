@@ -1,13 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
     <string name="hello">Hello World, HolidayAppActivity!</string>
     <string name="app_name">My School Holidays</string>
     <string name="label_school_name">Wilsden primary school</string>
     <string name="label_enter_school_name">Start typing your school name and choose one from the suggestions that you will see.</string>
     <string name="label_save">Save</string>
     <string name="error_message">Error</string>
-<string name="widget_help_text">To get started simply search for your school. Once you have found your school visit your devices desktop, press and hold your finger on a blank part of the screen.  Select Widget, Select My School Holidays.</string>
-<string name="holiday_app_desc">The &quot;My School Holidays&quot; widget.\n\nGet a countdown widget to your next school holiday date and easily access your school calendar.</string>
-<string name="visit_website">Visit Website</string>
-<string name="lab_go">Go</string>
+    <string name="widget_help_text">To get started simply search for your school. Once you have found your school visit your devices desktop, press and hold your finger on a blank part of the screen.  Select Widget, Select My School Holidays.</string>
+    <string name="holiday_app_desc">The "My School Holidays" widget.\n\nGet a countdown widget to your next school holiday date and easily access your school calendar.</string>
+    <string name="visit_website">Visit Website</string>
+    <string name="lab_go">Go</string>
+    <string name="lab_you_have_chosen">You\'ve chosen </string>
+    <string name="lab_school_name">No school selected</string>
+    <string name="lab_school_confirmation">        <![CDATA[<b>To add the widget to your homescreen:</b><br/><br/>1. Press and hold your finger on your desktop, select Widgets.<br/><br/>2. Select My School Holidays from the list of available widgets and click OK.<br/><br/>3. Place the Widget wherever you want on your screen.<br/><br/>]]>
+    </string>
+    <string name="lab_exit">Exit</string>
+
 </resources>

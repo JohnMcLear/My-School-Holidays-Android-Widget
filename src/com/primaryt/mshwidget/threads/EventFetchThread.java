@@ -19,42 +19,42 @@ import com.primaryt.mshwidget.utils.EventInfoParser;
 import com.primaryt.mshwidget.utils.IOUtils;
 
 public class EventFetchThread extends BasicThread {
-	  private final static String BASE_URL = "http://myschoolholidays.com/myschool-text.php?s=";
+	private final static String BASE_URL = "http://myschoolholidays.com/myschool-text.php?s=";
 
-	    private String queryString;
+	private String queryString;
 
-	    public EventFetchThread(Context context, Handler handler, String queryString) {
-	        super(context, handler);
-	        this.queryString = queryString;
-	    }
+	public EventFetchThread(Context context, Handler handler, String queryString) {
+		super(context, handler);
+		this.queryString = queryString;
+	}
 
-	    @Override
-	    public void run() {
-	        HttpClient client = new DefaultHttpClient();
-	        HttpGet getRequest = new HttpGet(BASE_URL + queryString);
-	        try {
-	            HttpResponse response = client.execute(getRequest);
-	            if(checkResponseCode(response.getStatusLine().getStatusCode())){
-	                processData(response.getEntity().getContent());
-	            }
-	        } catch (ClientProtocolException e) {
-	            e.printStackTrace();
-	            catchAndSendException(e);
-	        } catch (IOException e) {
-	            e.printStackTrace();
-	            catchAndSendException(e);
-	        }
-	    }
-	    
-	    private void processData(InputStream stream) throws IOException{
-	        String response = IOUtils.convertStreamToString(stream);
-	        EventInfoParser eventParser = new EventInfoParser(response);
-	        try {
-	        	ArrayList<Event> eventList = eventParser.parse();
-	        	sendEvent(eventList);
-			} catch (JSONException e) {
-			    e.printStackTrace();
+	@Override
+	public void run() {
+		HttpClient client = new DefaultHttpClient();
+		HttpGet getRequest = new HttpGet(BASE_URL + queryString);
+		try {
+			HttpResponse response = client.execute(getRequest);
+			if (checkResponseCode(response.getStatusLine().getStatusCode())) {
+				processData(response.getEntity().getContent());
 			}
-	    }
+		} catch (ClientProtocolException e) {
+			e.printStackTrace();
+			catchAndSendException(e, queryString);
+		} catch (IOException e) {
+			e.printStackTrace();
+			catchAndSendException(e, queryString);
+		}
+	}
+
+	private void processData(InputStream stream) throws IOException {
+		String response = IOUtils.convertStreamToString(stream);
+		EventInfoParser eventParser = new EventInfoParser(response);
+		try {
+			ArrayList<Event> eventList = eventParser.parse();
+			sendEvent(eventList);
+		} catch (JSONException e) {
+			e.printStackTrace();
+		}
+	}
 
 }
