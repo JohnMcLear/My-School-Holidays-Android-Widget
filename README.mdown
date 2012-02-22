@@ -1,13 +1,16 @@
 ### Version 1.2 Version code 4
 Features
+
 1. Added a school confirmation screen
 
 Bugs:
+
 2. Fixed multiple toasts display when no result found.
 
 ### Version 1.1 Version code 3
 
 Bug fixes
+
 1. During the holiday, the message should show how many days until holiday ends
 2. Widget doesn't refresh until re-boot
 3. Unwanted "No results found message" removed
