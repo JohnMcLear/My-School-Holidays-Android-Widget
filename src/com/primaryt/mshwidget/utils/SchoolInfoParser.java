@@ -31,7 +31,9 @@ public class SchoolInfoParser {
             JSONObject object = nameArray.getJSONObject(i);
             Long schoolID = object.getLong("schoolid");
             String label = object.getString("label");
+            String country = object.getString("country");
             School school = new School(schoolID, label);
+            school.setCountry(country);
             schoolList.add(school);
         }
         return schoolList;

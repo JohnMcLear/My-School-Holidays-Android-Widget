@@ -16,5 +16,6 @@
     <string name="lab_school_confirmation">        <![CDATA[<b>To add the widget to your homescreen:</b><br/><br/>1. Press and hold your finger on your desktop, select Widgets.<br/><br/>2. Select My School Holidays from the list of available widgets and click OK.<br/><br/>3. Place the Widget wherever you want on your screen.<br/><br/>]]>
     </string>
     <string name="lab_exit">Exit</string>
+    <string name="lab_country_fetch_error">Could not get school url. Please select your school again.</string>
 
 </resources>

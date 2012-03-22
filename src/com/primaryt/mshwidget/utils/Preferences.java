@@ -13,6 +13,8 @@ public class Preferences {
     private final static String SCHOOL_ID = "school_id";
 
     private final static String SCHOOL_NAME = "school_name";
+    
+    private final static String SCHOOL_COUNTRY = "school_country";
 
     private SharedPreferences preferences;
 
@@ -30,6 +32,7 @@ public class Preferences {
         Editor edit = preferences.edit();
         edit.putString(SCHOOL_NAME, school.getSchoolLabel());
         edit.putLong(SCHOOL_ID, school.getSchoolID());
+        edit.putString(SCHOOL_COUNTRY, school.getCountry());
         edit.commit();
 
     }
@@ -43,5 +46,13 @@ public class Preferences {
         url = url.substring(0, url.indexOf("(") - 1);
         url = url + " " + getSelectedSchoolID();
         return url.replaceAll(" ", "-");
+    }
+    
+    public String getSelectedSchoolCountry(){
+        return preferences.getString(SCHOOL_COUNTRY, "");
+    }
+    
+    public String getSchoolName(){
+        return preferences.getString(SCHOOL_NAME, "");
     }
 }
