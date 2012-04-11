@@ -47,7 +47,12 @@ public class SchoolAdapter extends BaseAdapter {
             convertView = inflater.inflate(R.layout.school_item, null);
         }
 
-        ((TextView) convertView).setText(school.getSchoolLabel());
+        TextView textViewSchool = (TextView) convertView.findViewById(R.id.textViewSchool);
+        textViewSchool.setText(school.getSchoolLabel());
+
+        TextView textViewCountry = (TextView) convertView.findViewById(R.id.textViewCountry);
+        textViewCountry
+                .setText(context.getString(R.string.lab_country) + " " + school.getCountry().toUpperCase());
         convertView.setTag(school);
         return convertView;
     }

@@ -12,6 +12,8 @@ public class School implements Serializable{
     
     private String schoolLabel;
     
+    private String country;
+    
     public School(Long schoolID, String schoolLabel){
         this.schoolID = schoolID;
         this.schoolLabel = schoolLabel;
@@ -31,5 +33,13 @@ public class School implements Serializable{
 
     public void setSchoolLabel(String schoolLabel) {
         this.schoolLabel = schoolLabel;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public void setCountry(String country) {
+        this.country = country;
     }
 }
