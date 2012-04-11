@@ -17,5 +17,6 @@
     </string>
     <string name="lab_exit">Exit</string>
     <string name="lab_country_fetch_error">Could not get school url. Please select your school again.</string>
+    <string name="lab_country">Country: </string>
 
 </resources>
