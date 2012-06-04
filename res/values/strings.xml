@@ -18,5 +18,11 @@
     <string name="lab_exit">Exit</string>
     <string name="lab_country_fetch_error">Could not get school url. Please select your school again.</string>
     <string name="lab_country">Country: </string>
+    <string name="lab_feedback_message">Take a few seconds to rate My School Holidays Widget. It will help us make this app better. How about telling us what you think?</string>
+    <string name="lab_rate">Rate</string>
+    <string name="lab_feedback">Feedback</string>
+    <string name="lab_done">Done</string>
+    <string name="lab_no_market">You cannot rate now since Google Play is not installed.</string>
+    <string name="lab_no_email_client">You need to setup an email client to be able to send feedback to us.</string>
 
 </resources>
