@@ -13,8 +13,12 @@ public class Preferences {
     private final static String SCHOOL_ID = "school_id";
 
     private final static String SCHOOL_NAME = "school_name";
-    
+
     private final static String SCHOOL_COUNTRY = "school_country";
+
+    private final static String USE_COUNT = "use_count";
+
+    private final static int PROMPT_FEEDBACK_AFTER_USE_COUNT = 5;
 
     private SharedPreferences preferences;
 
@@ -47,12 +51,44 @@ public class Preferences {
         url = url + " " + getSelectedSchoolID();
         return url.replaceAll(" ", "-");
     }
-    
-    public String getSelectedSchoolCountry(){
+
+    public String getSelectedSchoolCountry() {
         return preferences.getString(SCHOOL_COUNTRY, "");
     }
-    
-    public String getSchoolName(){
+
+    public String getSchoolName() {
         return preferences.getString(SCHOOL_NAME, "");
+    }
+
+    private void appUseCountUp() {
+        Editor edit = preferences.edit();
+        edit.putInt(USE_COUNT, getAppUseCount() + 1);
+        edit.commit();
+    }
+
+    private void resetCount() {
+        Editor edit = preferences.edit();
+        edit.putInt(USE_COUNT, 0);
+        edit.commit();
+    }
+
+    private int getAppUseCount() {
+        int count = 0;
+        count = preferences.getInt(USE_COUNT, 0);
+        if (count == PROMPT_FEEDBACK_AFTER_USE_COUNT) {
+            resetCount();
+        } else {
+            appUseCountUp();
+        }
+        return count;
+    }
+
+    public boolean shouldPromptForFeedback() {
+        boolean value = false;
+
+        if (getAppUseCount() == PROMPT_FEEDBACK_AFTER_USE_COUNT) {
+            value = true;
+        }
+        return value;
     }
 }
