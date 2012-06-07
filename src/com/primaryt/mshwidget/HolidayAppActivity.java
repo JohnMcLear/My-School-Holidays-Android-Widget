@@ -82,6 +82,15 @@ public class HolidayAppActivity extends Activity {
 
 	private void initializeUIElements() {
 
+	    Button buttonHelp = (Button)findViewById(R.id.buttonHelp);
+	    buttonHelp.setOnClickListener(new OnClickListener() {
+            
+            @Override
+            public void onClick(View v) {
+               launchFeedbackAndRatingActivity(); 
+            }
+        });
+	    
 		if (!ignore) {
 			Preferences prefs = new Preferences(this);
 			if (prefs.getSelectedSchoolID() == -1) {
@@ -233,5 +242,10 @@ public class HolidayAppActivity extends Activity {
 			}
 		}
 		super.onActivityResult(requestCode, resultCode, data);
+	}
+	
+	private void launchFeedbackAndRatingActivity(){
+	    Intent intent = new Intent(this, FeedbackActivity.class);
+	    startActivity(intent);
 	}
 }

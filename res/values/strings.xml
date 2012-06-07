@@ -24,5 +24,15 @@
     <string name="lab_done">Done</string>
     <string name="lab_no_market">You cannot rate now since Google Play is not installed.</string>
     <string name="lab_no_email_client">You need to setup an email client to be able to send feedback to us.</string>
-
+    <string name="lab_help">\?</string>
+    <string name="lab_feedback_bold">Feedback</string>
+    <string name="lab_email_info">By providing us with feedback via email the following information will be sent to us:\n\n- Device Make/Model\n- Version of Android installed\n- Version of My School Holidays Widget\n\nIn addition to this as the email will be sent via your registered google account we will be able to contact you with regards any bugs or problems you may be experiencing.\n\nContact information will NOT be disclosed to any other third partys or used for the purposes of soliciting.\n\nDo you concent to sending us feedback?</string>
+	<string name="lab_yes">Yes</string>
+	<string name="lab_no_thanks">No Thanks</string>
+	<string name="lab_device_info">Device info</string>
+	<string name="lab_device_make">Device make/model</string>
+	<string name="lab_android_version">Android version</string>
+	<string name="lab_mshw_version">My School Holidays Widget version</string>
+	<string name="lab_school_choosen">School selected</string>
+	<string name="lab_your_problem">Describe your problem here:\n</string>
 </resources>

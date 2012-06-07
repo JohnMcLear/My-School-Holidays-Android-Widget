@@ -58,7 +58,8 @@
             </intent-filter>
         </receiver>
         <activity android:name=".SchoolConfirmationActivity" android:screenOrientation="portrait"></activity>
-        <activity android:name=".FeedbackActivity"></activity>
+        <activity android:name=".FeedbackActivity" android:screenOrientation="portrait"></activity>
+        <activity android:name=".EmailConfirmationActivity" android:screenOrientation="portrait"></activity>
     </application>
 
     <supports-screens

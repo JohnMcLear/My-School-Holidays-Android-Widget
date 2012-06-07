@@ -12,6 +12,8 @@ import android.widget.Toast;
 
 public class FeedbackActivity extends Activity {
 
+    private static final int SEND_FEEDBACK = 100;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -58,20 +60,18 @@ public class FeedbackActivity extends Activity {
     }
 
     private void sendFeedback() {
-        try {
-            Intent intent = new Intent(android.content.Intent.ACTION_SEND);
-            intent.putExtra(android.content.Intent.EXTRA_EMAIL, new String[] {
-                "ob1@cheesejedi.com"
-            });
-            intent.putExtra(android.content.Intent.EXTRA_SUBJECT, "MSHW: Needs Improvement!");
-            intent.setType("plain/text");
-            startActivity(intent);
-        } catch (Exception e) {
-            showToast(R.string.lab_no_email_client);
-        }
+
+        Intent intent = new Intent(this, EmailConfirmationActivity.class);
+        startActivityForResult(intent, SEND_FEEDBACK);
     }
 
     private void showToast(int resId) {
         Toast.makeText(this, getString(resId), Toast.LENGTH_LONG).show();
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        finish();
     }
 }
