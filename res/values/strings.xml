@@ -18,7 +18,7 @@
     <string name="lab_exit">Exit</string>
     <string name="lab_country_fetch_error">Could not get school url. Please select your school again.</string>
     <string name="lab_country">Country: </string>
-    <string name="lab_feedback_message">Take a few seconds to rate My School Holidays Widget. It will help us make this app better. How about telling us what you think?</string>
+    <string name="lab_feedback_message">If you like My School Holidays Widget and are finding it useful please take a moment to rate this app.\n\nIf you are having problems with this app or have a suggestion on how we can improve it please provide us with some feedback by pressing the button below. We take feedback very seriously and aim to respond within 48 hours.</string>
     <string name="lab_rate">Rate</string>
     <string name="lab_feedback">Feedback</string>
     <string name="lab_done">Done</string>
@@ -34,5 +34,6 @@
 	<string name="lab_android_version">Android version</string>
 	<string name="lab_mshw_version">My School Holidays Widget version</string>
 	<string name="lab_school_choosen">School selected</string>
-	<string name="lab_your_problem">Describe your problem here:\n</string>
+	<string name="lab_your_problem">Please enter feedback below:\n</string>
+	<string name="lab_back">Back</string>
 </resources>
