@@ -60,9 +60,12 @@ public class FeedbackActivity extends Activity {
     }
 
     private void sendFeedback() {
-
-        Intent intent = new Intent(this, EmailConfirmationActivity.class);
-        startActivityForResult(intent, SEND_FEEDBACK);
+        try {
+            Intent intent = new Intent(this, EmailConfirmationActivity.class);
+            startActivityForResult(intent, SEND_FEEDBACK);
+        } catch (Exception e) {
+            showToast(R.string.lab_no_email_client);
+        }
     }
 
     private void showToast(int resId) {
