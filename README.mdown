@@ -1,3 +1,8 @@
+### Version 1.7 Version code 7
+Features
+
+1. Switched to new API
+
 ### Version 1.4 Version code 6
 Features
 

@@ -17,6 +17,8 @@ public class Preferences {
     private final static String SCHOOL_COUNTRY = "school_country";
 
     private final static String USE_COUNT = "use_count";
+    
+    private final static String SCHOOL_FULL_URL = "school_url";
 
     private final static int PROMPT_FEEDBACK_AFTER_USE_COUNT = 5;
 
@@ -37,6 +39,7 @@ public class Preferences {
         edit.putString(SCHOOL_NAME, school.getSchoolLabel());
         edit.putLong(SCHOOL_ID, school.getSchoolID());
         edit.putString(SCHOOL_COUNTRY, school.getCountry());
+        edit.putString(SCHOOL_FULL_URL, school.getFullUrl());
         edit.commit();
 
     }
@@ -46,10 +49,7 @@ public class Preferences {
     }
 
     public String getSelectedSchoolURL() {
-        String url = preferences.getString(SCHOOL_NAME, "");
-        url = url.substring(0, url.indexOf("(") - 1);
-        url = url + " " + getSelectedSchoolID();
-        return url.replaceAll(" ", "-");
+        return preferences.getString(SCHOOL_FULL_URL, "");
     }
 
     public String getSelectedSchoolCountry() {

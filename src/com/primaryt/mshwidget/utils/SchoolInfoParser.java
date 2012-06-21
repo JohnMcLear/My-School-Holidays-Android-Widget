@@ -21,20 +21,21 @@ public class SchoolInfoParser {
     }
 
     public ArrayList<School> parse() throws JSONException {
-    	jsonString = jsonString.trim();
-        if (jsonString.indexOf("(") < 2) {
-            int strLen = jsonString.length();
-            jsonString = jsonString.substring(1, strLen - 1);
-        }
-        JSONArray nameArray = new JSONArray(jsonString);
+        jsonString = jsonString.trim();
+        JSONObject json = new JSONObject(jsonString);
+        JSONArray nameArray = json.getJSONArray("results");
         for (int i = 0; i < nameArray.length(); i++) {
             JSONObject object = nameArray.getJSONObject(i);
-            Long schoolID = object.getLong("schoolid");
-            String label = object.getString("label");
-            String country = object.getString("country");
-            School school = new School(schoolID, label);
-            school.setCountry(country);
-            schoolList.add(school);
+            if (object.getString("sourceType").equals("school")) {
+                Long schoolID = object.getLong("id");
+                String label = object.getString("name");
+                String country = object.getString("countryCode");
+                String fullUrl = object.getString("fullUrl");
+                School school = new School(schoolID, label);
+                school.setFullUrl(fullUrl);
+                school.setCountry(country);
+                schoolList.add(school);
+            }
         }
         return schoolList;
     }
