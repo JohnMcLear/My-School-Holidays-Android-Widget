@@ -4,6 +4,7 @@ package com.primaryt.mshwidget.utils;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
+import android.text.TextUtils;
 
 import com.primaryt.mshwidget.bo.School;
 
@@ -17,7 +18,7 @@ public class Preferences {
     private final static String SCHOOL_COUNTRY = "school_country";
 
     private final static String USE_COUNT = "use_count";
-    
+
     private final static String SCHOOL_FULL_URL = "school_url";
 
     private final static int PROMPT_FEEDBACK_AFTER_USE_COUNT = 5;
@@ -49,7 +50,14 @@ public class Preferences {
     }
 
     public String getSelectedSchoolURL() {
-        return preferences.getString(SCHOOL_FULL_URL, "");
+        String url = preferences.getString(SCHOOL_FULL_URL, "");
+        if (TextUtils.isEmpty(url)) {
+            String oldUrl = preferences.getString(SCHOOL_NAME, "");
+            oldUrl = oldUrl.substring(0, url.indexOf("(") - 1);
+            oldUrl = oldUrl + " " + getSelectedSchoolID();
+            url = oldUrl.replaceAll(" ", "-");
+        }
+        return url;
     }
 
     public String getSelectedSchoolCountry() {
