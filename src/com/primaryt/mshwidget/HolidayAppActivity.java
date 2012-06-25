@@ -82,15 +82,15 @@ public class HolidayAppActivity extends Activity {
 
 	private void initializeUIElements() {
 
-	    Button buttonHelp = (Button)findViewById(R.id.buttonHelp);
-	    buttonHelp.setOnClickListener(new OnClickListener() {
-            
-            @Override
-            public void onClick(View v) {
-               launchFeedbackAndRatingActivity(); 
-            }
-        });
-	    
+		Button buttonHelp = (Button) findViewById(R.id.buttonHelp);
+		buttonHelp.setOnClickListener(new OnClickListener() {
+
+			@Override
+			public void onClick(View v) {
+				launchFeedbackAndRatingActivity();
+			}
+		});
+
 		if (!ignore) {
 			Preferences prefs = new Preferences(this);
 			if (prefs.getSelectedSchoolID() == -1) {
@@ -108,7 +108,9 @@ public class HolidayAppActivity extends Activity {
 			@Override
 			public void onTextChanged(CharSequence s, int start, int before,
 					int count) {
-				queryForSchools(s.toString());
+				if (s.length() > 3) {
+					queryForSchools(s.toString());
+				}
 			}
 
 			@Override
@@ -243,9 +245,9 @@ public class HolidayAppActivity extends Activity {
 		}
 		super.onActivityResult(requestCode, resultCode, data);
 	}
-	
-	private void launchFeedbackAndRatingActivity(){
-	    Intent intent = new Intent(this, FeedbackActivity.class);
-	    startActivity(intent);
+
+	private void launchFeedbackAndRatingActivity() {
+		Intent intent = new Intent(this, FeedbackActivity.class);
+		startActivity(intent);
 	}
 }

@@ -39,6 +39,7 @@ public class SchoolFetchThread extends BasicThread {
 	public void run() {
 		if (Config.LOGGING) {
 			Log.i(TAG, "Query String: " + queryString);
+			Log.i(TAG, "API Call: " + BASE_URL + queryString);
 		}
 
 		HttpClient client = new DefaultHttpClient();

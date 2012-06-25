@@ -1,3 +1,9 @@
+### Version 1.8 Version code 8
+Features
+
+1. Switched to new API after server side changes
+2. Made the school name display larger so as to accommodate the whole school name
+
 ### Version 1.7 Version code 7
 Features
 
