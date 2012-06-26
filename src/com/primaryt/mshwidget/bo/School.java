@@ -16,11 +16,45 @@ public class School implements Serializable{
     
     private String fullUrl;
     
-    public School(Long schoolID, String schoolLabel){
+    private String town;
+    
+    private String postCode;
+    
+    private String street;
+    
+    public String getStreet() {
+		return street;
+	}
+
+	public void setStreet(String street) {
+		this.street = street;
+	}
+
+	public String getTown() {
+		return town;
+	}
+
+	public void setTown(String town) {
+		this.town = town;
+	}
+
+	public String getPostCode() {
+		return postCode;
+	}
+
+	public void setPostCode(String postCode) {
+		this.postCode = postCode;
+	}
+
+	public School(Long schoolID, String schoolLabel){
         this.schoolID = schoolID;
         this.schoolLabel = schoolLabel;
     }
 
+	public School(){
+		
+	}
+	
     public Long getSchoolID() {
         return schoolID;
     }

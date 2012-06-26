@@ -31,9 +31,15 @@ public class SchoolInfoParser {
                 String label = object.getString("name");
                 String country = object.getString("countryCode");
                 String fullUrl = object.getString("fullUrl");
+                String town = object.getString("town");
+                String postCode = object.getString("postcode");
+                String street = object.getString("street");
                 School school = new School(schoolID, label);
                 school.setFullUrl(fullUrl);
                 school.setCountry(country);
+                school.setPostCode(postCode);
+                school.setTown(town);
+                school.setStreet(street);
                 schoolList.add(school);
             }
         }

@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import android.content.Context;
 import android.text.Html;
+import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -49,7 +50,22 @@ public class SchoolAdapter extends BaseAdapter {
 
 		TextView textViewSchool = (TextView) convertView
 				.findViewById(R.id.textViewSchool);
-		textViewSchool.setText(Html.fromHtml(school.getSchoolLabel()));
+		StringBuilder schoolname = new StringBuilder();
+		schoolname.append(school.getSchoolLabel().trim());
+		if (!TextUtils.isEmpty(school.getPostCode().trim() + school.getTown())) {
+			schoolname.append(" (");
+			if (!TextUtils.isEmpty(school.getTown().trim())) {
+				schoolname.append(school.getTown().trim());
+				if(!TextUtils.isEmpty(school.getPostCode().trim())){
+					schoolname.append(" ");
+				}
+			}
+			if (!TextUtils.isEmpty(school.getPostCode().trim())) {
+				schoolname.append(school.getPostCode().trim());
+			}
+			schoolname.append(")");
+		}
+		textViewSchool.setText(Html.fromHtml(schoolname.toString()));
 
 		TextView textViewCountry = (TextView) convertView
 				.findViewById(R.id.textViewCountry);
