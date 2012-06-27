@@ -1,14 +1,9 @@
-### Version 1.8 Version code 8
+### Version 1.5 Version code 9
 Features
 
 1. Switched to new API after server side changes
 2. Made the school name display larger so as to accommodate the whole school name
 3. The results now display the town and the postcode as well.
-
-### Version 1.7 Version code 7
-Features
-
-1. Switched to new API
 
 ### Version 1.4 Version code 6
 Features
