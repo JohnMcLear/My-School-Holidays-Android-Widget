@@ -23,7 +23,7 @@ import com.primaryt.mshwidget.utils.SchoolInfoParser;
 
 public class SchoolFetchThread extends BasicThread {
 
-	private final static String BASE_URL = "http://myschoolholidays.com/myschool-lookup.php?term=";
+	private final static String BASE_URL = "http://myschoolholidays.com/api/searchForSchoolOrDistrict?q=";
 
 	private final static String TAG = "SchoolFetchThread";
 
@@ -39,6 +39,7 @@ public class SchoolFetchThread extends BasicThread {
 	public void run() {
 		if (Config.LOGGING) {
 			Log.i(TAG, "Query String: " + queryString);
+			Log.i(TAG, "API Call: " + BASE_URL + queryString);
 		}
 
 		HttpClient client = new DefaultHttpClient();

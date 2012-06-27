@@ -4,6 +4,7 @@ package com.primaryt.mshwidget.utils;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
+import android.text.TextUtils;
 
 import com.primaryt.mshwidget.bo.School;
 
@@ -18,6 +19,14 @@ public class Preferences {
 
     private final static String USE_COUNT = "use_count";
 
+    private final static String SCHOOL_FULL_URL = "school_url";
+    
+    private final static String SCHOOL_TOWN = "school_town";
+    
+    private final static String SCHOOL_POSTCODE = "post_code";
+    
+    private final static String SCHOOL_STREET = "street";
+    
     private final static int PROMPT_FEEDBACK_AFTER_USE_COUNT = 5;
 
     private SharedPreferences preferences;
@@ -37,6 +46,10 @@ public class Preferences {
         edit.putString(SCHOOL_NAME, school.getSchoolLabel());
         edit.putLong(SCHOOL_ID, school.getSchoolID());
         edit.putString(SCHOOL_COUNTRY, school.getCountry());
+        edit.putString(SCHOOL_FULL_URL, school.getFullUrl());
+        edit.putString(SCHOOL_TOWN, school.getTown());
+        edit.putString(SCHOOL_STREET, school.getStreet());
+        edit.putString(SCHOOL_POSTCODE, school.getPostCode());
         edit.commit();
 
     }
@@ -46,10 +59,14 @@ public class Preferences {
     }
 
     public String getSelectedSchoolURL() {
-        String url = preferences.getString(SCHOOL_NAME, "");
-        url = url.substring(0, url.indexOf("(") - 1);
-        url = url + " " + getSelectedSchoolID();
-        return url.replaceAll(" ", "-");
+        String url = preferences.getString(SCHOOL_FULL_URL, "");
+        if (TextUtils.isEmpty(url)) {
+            String oldUrl = preferences.getString(SCHOOL_NAME, "");
+            oldUrl = oldUrl.substring(0, url.indexOf("(") - 1);
+            oldUrl = oldUrl + " " + getSelectedSchoolID();
+            url = oldUrl.replaceAll(" ", "-");
+        }
+        return url;
     }
 
     public String getSelectedSchoolCountry() {
@@ -64,6 +81,18 @@ public class Preferences {
         Editor edit = preferences.edit();
         edit.putInt(USE_COUNT, getAppUseCount() + 1);
         edit.commit();
+    }
+    
+    public School getSelectedSchool(){
+    	School school = new School();
+    	school.setSchoolID(preferences.getLong(SCHOOL_ID, -1));
+    	school.setSchoolLabel(preferences.getString(SCHOOL_NAME, ""));
+    	school.setCountry(preferences.getString(SCHOOL_COUNTRY, ""));
+    	school.setFullUrl(preferences.getString(SCHOOL_FULL_URL, ""));
+    	school.setTown(preferences.getString(SCHOOL_TOWN, ""));
+    	school.setPostCode(preferences.getString(SCHOOL_POSTCODE, ""));
+    	school.setStreet(preferences.getString(SCHOOL_STREET, ""));
+    	return school;
     }
 
     private void resetCount() {
