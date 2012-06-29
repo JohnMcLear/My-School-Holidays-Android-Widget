@@ -1,5 +1,5 @@
 ### Version 1.6 Version code 10
-Bugs:
+Bugs
 
 1. Fix crash on upgrading from old version to new versions
 
